@@ -21,6 +21,7 @@ const ItemList = ({ apiUrl }) => {
 				let data = await response.json();
 
 				setItems(data);
+				setFilteredItems(data);
 				setIsLoading(false);
 			} catch (error) {
 				console.error(error);
