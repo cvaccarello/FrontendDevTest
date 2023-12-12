@@ -3,6 +3,9 @@
 # webstorm IDE files
 .idea
 
+# manual webpack build files
+/dist
+
 # dependencies
 /node_modules
 /.pnp
