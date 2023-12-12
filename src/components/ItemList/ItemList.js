@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
+import Search from '../Search/Search';
 
 const ItemList = ({ apiUrl }) => {
 	const [ isLoading, setIsLoading ] = useState(true);
 	const [ items, setItems ] = useState([]);
+	const [ filteredItems, setFilteredItems ] = useState([]);
 
 	// this gives us a default url to use for fetching items, while optionally allowing an override if needed
 	if (!apiUrl) {
@@ -34,20 +36,19 @@ const ItemList = ({ apiUrl }) => {
 	}
 
 	return (
-		<>
-			<Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-				<List>
-					{
-						items
-							// TODO: cap at 10 for now, but we can add client-side pagination later
-							.slice(0, 10)
-							.map((item) => (
-								<ListItem key={item.id}>{item.title}</ListItem>
-							))
-					}
-				</List>
-			</Box>
-		</>
+		<Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+			<Search items={items} setFilteredItems={setFilteredItems}></Search>
+			<List>
+				{
+					filteredItems
+						// TODO: cap at 10 for now, but we can add client-side pagination later
+						.slice(0, 10)
+						.map((item) => (
+							<ListItem key={item.id}>{item.title}</ListItem>
+						))
+				}
+			</List>
+		</Box>
 	);
 };
 
