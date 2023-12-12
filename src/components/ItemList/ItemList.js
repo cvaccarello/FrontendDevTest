@@ -32,7 +32,20 @@ const ItemList = ({ apiUrl }) => {
 	}, [ apiUrl ]);
 
 	if (isLoading) {
-		return <p>Loading...</p>;
+		return (
+			<Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+				<Box sx={{ p: 2 }}>Loading...</Box>
+			</Box>
+		);
+	}
+
+	if (!filteredItems.length) {
+		return (
+			<Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+				<Search items={items} setFilteredItems={setFilteredItems}></Search>
+				<Box sx={{ p: 2 }}>These aren't the droids you're looking for.</Box>
+			</Box>
+		);
 	}
 
 	return (

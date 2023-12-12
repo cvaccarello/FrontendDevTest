@@ -10,7 +10,8 @@ function App() {
 			<Box
 				sx={{
 					display: "flex",
-					justifyContent: "center",
+					// TODO: while I like how the centering looks visually, this causes a UI issue where the search box is jumping around as the items are added/removed.  There are numerous other approaches but could take some time and really depends on the overall design.
+					// justifyContent: "center",
 					flexDirection: "column",
 					alignItems: "center",
 					minHeight: "100vh"
