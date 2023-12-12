@@ -19,23 +19,21 @@ const Search = ({ items, setFilteredItems }) => {
 	}, [ items, searchTerm, setFilteredItems ]);
 
 	return (
-		<>
-			<FormControl fullWidth variant="filled">
-				<InputLabel htmlFor="standard-adornment-search">Search Items</InputLabel>
-				<FilledInput
-					id="standard-adornment-search"
-					inputProps={ariaLabel}
-						onChange={(e) => {
-						setSearchTerm(e.target.value);
-					}}
-					endAdornment={
-						<InputAdornment position="end">
-							<SearchIcon />
-						</InputAdornment>
-					}
-				/>
-			</FormControl>
-		</>
+		<FormControl fullWidth variant="filled">
+			<InputLabel htmlFor="standard-adornment-search">Search Items</InputLabel>
+			<FilledInput
+				id="standard-adornment-search"
+				inputProps={ariaLabel}
+				onChange={(e) => {
+					setSearchTerm(e.target.value);
+				}}
+				endAdornment={
+					<InputAdornment position="end">
+						<SearchIcon />
+					</InputAdornment>
+				}
+			/>
+		</FormControl>
 	);
 };
 
