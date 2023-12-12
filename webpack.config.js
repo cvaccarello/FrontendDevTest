@@ -3,6 +3,7 @@ const path = require('path');
 const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const isDevelopment = process.env.NODE_ENV || true;
+console.log(process.env.NODE_ENV, isDevelopment);
 
 module.exports = {
 	mode: isDevelopment ? 'development' : 'production',
@@ -26,7 +27,7 @@ module.exports = {
 			},
 			{
 				test: /\.css$/i,
-				use: [ 'style-loader', 'css-loader' ],
+				use: [ 'style-loader', 'css-loader', 'sass-loader' ],
 			},
 			{
 				test: /\.svg$/,
