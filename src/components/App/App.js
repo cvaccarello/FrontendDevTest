@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import logo from '../../assets/images/logo.svg';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
