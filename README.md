@@ -33,7 +33,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `npm run webpack:dev`
 
-Creates and bundles a manual webpack process, then hosts a small server on [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Creates and bundles a manual webpack process, then hosts a small server on [http://localhost:8080](http://localhost:8080) to view it in your browser.
 
 ### `npm run webpack:build`
 
