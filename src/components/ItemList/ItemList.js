@@ -6,6 +6,7 @@ import Search from '../Search/Search';
 
 const ItemList = ({ apiUrl }) => {
 	const [ isLoading, setIsLoading ] = useState(true);
+	const [ fetchError, setFetchError ] = useState('');
 	const [ items, setItems ] = useState([]);
 	const [ filteredItems, setFilteredItems ] = useState([]);
 
@@ -26,6 +27,7 @@ const ItemList = ({ apiUrl }) => {
 			} catch (error) {
 				console.error(error);
 				setIsLoading(false);
+				setFetchError(error.message);
 			}
 		};
 
@@ -36,6 +38,14 @@ const ItemList = ({ apiUrl }) => {
 		return (
 			<Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
 				<Box sx={{ p: 2 }}>Loading...</Box>
+			</Box>
+		);
+	}
+
+	if (fetchError) {
+		return (
+			<Box sx={{ width: '100%', maxWidth: 360, bgcolor: '#ffcdd2', color: '#aa0000' }}>
+				<Box sx={{ p: 2 }}>{fetchError}</Box>
 			</Box>
 		);
 	}
