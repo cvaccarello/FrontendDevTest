@@ -7,8 +7,8 @@
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-		"webpack:dev": "webpack serve",
-		"webpack:build": "webpack"
+		"webpack:dev": "webpack serve --env development",
+		"webpack:build": "webpack --env production"
 	},
 	"eslintConfig": {
 		"extends": [
@@ -51,8 +51,10 @@
 		"dotenv-webpack": "^8.0.1",
 		"html-webpack-plugin": "^5.5.4",
 		"reset-css": "^5.0.2",
+		"sass": "^1.69.5",
 		"sass-loader": "^13.3.2",
 		"style-loader": "^3.3.3",
+		"svg-url-loader": "^8.0.0",
 		"webpack": "^5.89.0",
 		"webpack-cli": "^5.1.4",
 		"webpack-dev-server": "^4.15.1"
